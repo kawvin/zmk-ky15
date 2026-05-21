@@ -7,36 +7,13 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
-#include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
-
-//开启指针设备 → 编码器想发滚轮信号
-// / {
-// 	pointer0: pointer_default {
-// 		compatible = "zmk,pointer-relative";
-// 	};
-
-// 	sensors {
-// 		pointer-sensor {
-// 			compatible = "zmk,pointer-sensor";
-// 			pointer = <&pointer0>;
-// 		};
-// 	};
-// };
-
-// &pointer_vel_sensor {
-// 	compatible = "zmk,pointer-vel-sensor";
-// };
 
 // 鼠标灵敏度（只定义一次！）
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20   // 滚轮速度
 
 // 鼠标快捷宏（必须放在头文件之后！）
 // 鼠标指针移动快捷宏
@@ -46,10 +23,14 @@
 #define U_MS_R &mmv MOVE_RIGHT
 
 // 鼠标滚轮滚动快捷宏（新增！）
-#define U_WH_U &mscrl SCRL_UP    // 滚轮向上
-#define U_WH_D &mscrl SCRL_DOWN  // 滚轮向下
-#define U_WH_L &mscrl SCRL_LEFT  // 滚轮向左（水平滚动）
-#define U_WH_R &mscrl SCRL_RIGHT // 滚轮向右（水平滚动）
+// #define U_WH_U &mscrl SCRL_UP    // 滚轮向上
+// #define U_WH_D &mscrl SCRL_DOWN  // 滚轮向下
+// #define U_WH_L &mscrl SCRL_LEFT  // 滚轮向左（水平滚动）
+// #define U_WH_R &mscrl SCRL_RIGHT // 滚轮向右（水平滚动）
+
+// 编码器 = 滚轮上下（原生 ZMK 语法，无任何冲突！）
+#define ENC_SCROLL_UP &mscrl SCRL_UP
+#define ENC_SCROLL_DOWN &mscrl SCRL_DOWN
 
 // 新版 ZMK 指针滚轮（推荐！更流畅）(新版写法)
 //#define U_WH_U &pointer_vel y -120
