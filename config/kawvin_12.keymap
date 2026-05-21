@@ -26,16 +26,16 @@
 #define U_MS_R &mmv MOVE_RIGHT
 
 // 鼠标滚轮滚动快捷宏（新增！）
-//#define U_WH_U &mscrl SCRL_UP    // 滚轮向上
-//#define U_WH_D &mscrl SCRL_DOWN  // 滚轮向下
-//#define U_WH_L &mscrl SCRL_LEFT  // 滚轮向左（水平滚动）
-//#define U_WH_R &mscrl SCRL_RIGHT // 滚轮向右（水平滚动）
+#define U_WH_U &mscrl SCRL_UP    // 滚轮向上
+#define U_WH_D &mscrl SCRL_DOWN  // 滚轮向下
+#define U_WH_L &mscrl SCRL_LEFT  // 滚轮向左（水平滚动）
+#define U_WH_R &mscrl SCRL_RIGHT // 滚轮向右（水平滚动）
 
 // 新版 ZMK 指针滚轮（推荐！更流畅）(新版写法)
-#define U_WH_U &pointer_vel y -120
-#define U_WH_D &pointer_vel y 120
-#define U_WH_L &pointer_vel x -120
-#define U_WH_R &pointer_vel x 120
+//#define U_WH_U &pointer_vel y -120
+//#define U_WH_D &pointer_vel y 120
+//#define U_WH_L &pointer_vel x -120
+//#define U_WH_R &pointer_vel x 120
 
 // 鼠标按键（可选，方便使用）
 #define U_MB1 &mk LMB  // 鼠标左键
@@ -129,7 +129,8 @@
             >;
 
             label = "Qwerty";
-            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_DOWN>;
         };
 
         number_layer {
@@ -147,7 +148,8 @@
             >;
 
             label = "Number";
-            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_DOWN>;
         };
 
         mouse_layer {
@@ -165,7 +167,8 @@
             >;
 
             label = "Mouse";
-            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_DOWN>;
         };
 
         play_layer {
@@ -202,7 +205,8 @@
             >;
 
             label = "Read";
-            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_DOWN>;
         };
 
         chrome_layer {
@@ -220,7 +224,8 @@
              >;
 
             label = "Chrome";
-            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_DOWN>;
         };
     };
 };
