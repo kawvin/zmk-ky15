@@ -89,6 +89,6 @@ combos:
   k: ESC
 - p: [1, 2]
   k: ESC
-- p: [2, 9]
+- p: [2, 10]
   k: '&bootloader'
   l: [Mouse, Chrome]
