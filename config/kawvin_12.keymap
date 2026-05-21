@@ -27,7 +27,7 @@
 	};
 };
 
-&pointer_vel_sensor {
+pointer_vel_sensor {
 	compatible = "zmk,pointer-vel-sensor";
 };
 
@@ -103,10 +103,10 @@
             timeout-ms = <200>;
         };
 
-        // 在2、5层同时按 2 + 9 → bootloader
+        // 在2、5层同时按 2 + 10 → bootloader
         flash {
             bindings = <&bootloader>;
-            key-positions = <2 9>;
+            key-positions = <2 10>;
             timeout-ms = <200>;
             layers = <2 5>;
         };
