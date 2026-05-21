@@ -13,19 +13,34 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-
-
 // 鼠标灵敏度（只定义一次！）
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
 
 // 鼠标快捷宏（必须放在头文件之后！）
-
+// 鼠标指针移动快捷宏
 #define U_MS_U &mmv MOVE_UP
 #define U_MS_D &mmv MOVE_DOWN
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
+
+// 鼠标滚轮滚动快捷宏（新增！）
+//#define U_WH_U &mscrl SCRL_UP    // 滚轮向上
+//#define U_WH_D &mscrl SCRL_DOWN  // 滚轮向下
+//#define U_WH_L &mscrl SCRL_LEFT  // 滚轮向左（水平滚动）
+//#define U_WH_R &mscrl SCRL_RIGHT // 滚轮向右（水平滚动）
+
+// 新版 ZMK 指针滚轮（推荐！更流畅）(新版写法)
+#define U_WH_U &pointer_vel y -120
+#define U_WH_D &pointer_vel y 120
+#define U_WH_L &pointer_vel x -120
+#define U_WH_R &pointer_vel x 120
+
+// 鼠标按键（可选，方便使用）
+#define U_MB1 &mk LMB  // 鼠标左键
+#define U_MB2 &mk RMB  // 鼠标右键
+#define U_MB3 &mk MMB  // 鼠标中键
 
 / {
     behaviors {
@@ -101,105 +116,111 @@
 
         qwerty_layer {
             //  ---------------------------------------------------------------------------------
-            //  |HOME|UP         |PG_UP|
+            //  |HOME|UP         |PG_UP|ENTER|
             //  |LEFT|DOWN       |RIGHT|
             //  |END |ENTER      |PG_DN|
             //  |TAB |&ltq 2 BSPC|&to 1|
 
             bindings = <
-                &kp HOME  &kp UP       &kp PG_UP  
+                &kp HOME  &kp UP       &kp PG_UP  &kp ENTER
                 &kp LEFT  &kp DOWN     &kp RIGHT  
                 &kp END   &kp ENTER    &kp PG_DN  
                 &kp TAB   &ltq 2 BSPC  &to 1      
             >;
 
             label = "Qwerty";
+            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
         };
 
         number_layer {
             //  ---------------------------------------------------------------------------------
-            //  |N1|N2 |N3   |
+            //  |N1|N2 |N3   |ENTER|
             //  |N4|N5 |N6   |
             //  |N7|N8 |N9   |
             //  |N0|DOT|&to 2|
 
             bindings = <
-                &kp N1  &kp N2      &kp N3  
+                &kp N1  &kp N2      &kp N3  &kp ENTER
                 &kp N4  &kp N5      &kp N6  
                 &kp N7  &kp N8      &kp N9  
                 &kp N0  &kp KP_DOT  &to 2   
             >;
 
             label = "Number";
+            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
         };
 
         mouse_layer {
             //  ---------------------------------------------------------------------------------
-            //  |&mkp LCLK     |&mmv MOVE_UP  |&mkp RCLK      |
+            //  |&mkp LCLK     |&mmv MOVE_UP  |&mkp RCLK      |ENTER|
             //  |&mmv MOVE_LEFT|&mmv MOVE_DOWN|&mmv MOVE_RIGHT|
             //  |BT_SEL 0      |ENTER         |BT_CLR         |
             //  |BT_SEL 1      |              |&to 3          |
 
             bindings = <
-                &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        
+                &mkp LCLK       &mmv MOVE_UP    &mkp RCLK          &kp ENTER
                 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  
                 &bt BT_SEL 0    &kp ENTER       &bt BT_CLR       
                 &bt BT_SEL 1    &trans          &to 3            
             >;
 
             label = "Mouse";
+            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
         };
 
         play_layer {
             //  ---------------------------------------------------------------------------------
-            //  |&mt C LC(LEFT)|UP                 |&mt PG_UP LC(RIGHT)|
+            //  |&mt C LC(LEFT)|UP                 |&mt PG_UP LC(RIGHT)|ENTER|
             //  |LEFT          |DOWN               |RIGHT              |
             //  |&mt X LS(LEFT)|SPACE              |&mt PG_DN LS(RIGHT)|
             //  |&mt E N1      |&mt BACKSPACE ENTER|&to 4              |
 
             bindings = <
-                &mt C LC(LEFT)  &kp UP               &mt PG_UP LC(RIGHT)  
+                &mt C LC(LEFT)  &kp UP               &mt PG_UP LC(RIGHT)    &kp ENTER
                 &kp LEFT        &kp DOWN             &kp RIGHT            
                 &mt X LS(LEFT)  &kp SPACE            &mt PG_DN LS(RIGHT)  
                 &mt E N1        &mt BACKSPACE ENTER  &to 4                
             >;
 
             label = "Play";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         read_layer {
             //  ---------------------------------------------------------------------------------
-            //  |HOME|UP   |PG_UP|
+            //  |HOME|UP   |PG_UP|ENTER|
             //  |LEFT|DOWN |RIGHT|
             //  |END |SPACE|PG_DN|
             //  |ESC |ENTER|&to 5|
 
 
             bindings = <
-                &kp HOME  &kp UP     &kp PG_UP  
+                &kp HOME  &kp UP     &kp PG_UP    &kp ENTER
                 &kp LEFT  &kp DOWN   &kp RIGHT  
                 &kp END   &kp SPACE  &kp PG_DN  
                 &kp ESC   &kp ENTER  &to 5      
             >;
 
             label = "Read";
+            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
         };
 
         chrome_layer {
             //  ---------------------------------------------------------------------------------
-            //  |&mt LC(N1) HOME        |UP   |&mt LC(N9) PG_UP|
+            //  |&mt LC(N1) HOME        |UP   |&mt LC(N9) PG_UP|ENTER|
             //  |LEFT                   |DOWN |RIGHT           |
             //  |END                    |SPACE|PG_DN           |
             //  |&mt LC(LS(TAB)) LC(TAB)|LC(W)|&to 0           |
 
             bindings = <
-                &mt LC(N1) HOME          &kp UP     &mt LC(N9) PG_UP  
+                &mt LC(N1) HOME          &kp UP     &mt LC(N9) PG_UP    &kp ENTER
                 &kp LEFT                 &kp DOWN   &kp RIGHT         
                 &kp END                  &kp SPACE  &kp PG_DN         
                 &mt LC(LS(TAB)) LC(TAB)  &kp LC(W)  &to 0             
              >;
 
             label = "Chrome";
+            sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
         };
     };
 };
