@@ -10,7 +10,7 @@
 
 // 鼠标滚轮（原生ZMK，安全无冲突）
 #include <behaviors/mouse_keys.dtsi>
-#include <dt-bindings/zmk/mouse.h">
+#include <dt-bindings/zmk/mouse.h>
 
 // #define RC(row, col) {(row), (col)} 在 matrix_transform 中已经定义过了，不需要重复定义！
 
