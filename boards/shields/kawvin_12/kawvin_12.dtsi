@@ -4,16 +4,18 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
-
-
-#define RC(row, col) {(row), (col)}
-#include "behaviors.dtsi"
 
 // 鼠标滚轮（原生ZMK，安全无冲突）
 #include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/mouse.h">
+
+// #define RC(row, col) {(row), (col)} 在 matrix_transform 中已经定义过了，不需要重复定义！
+
+// 滚轮速度
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 30
 
 // 强行取消冲突的 RC 宏定义（绝杀！）
 //#undef RC
