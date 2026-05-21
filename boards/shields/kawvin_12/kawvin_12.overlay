@@ -7,6 +7,25 @@
 
 #include "kawvin_12.dtsi"
 
+//开启指针设备 → 编码器想发滚轮信号
+/ {
+	pointer0: pointer_default {
+		compatible = "zmk,pointer-relative";
+	};
+
+	sensors {
+		pointer-sensor {
+			compatible = "zmk,pointer-sensor";
+			pointer = <&pointer0>;
+		};
+	};
+};
+
+&pointer_vel_sensor {
+	compatible = "zmk,pointer-vel-sensor";
+};
+
+
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
