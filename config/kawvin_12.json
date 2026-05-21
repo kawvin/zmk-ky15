@@ -24,6 +24,7 @@
       "name": "default_transform"
     }
   },
+
   "sensors": [
     {
       "ref": "encoder1",

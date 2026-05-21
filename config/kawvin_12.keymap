@@ -13,8 +13,25 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// 鼠标灵敏度（只定义一次！）
+//开启指针设备 → 编码器想发滚轮信号
+/ {
+	pointer0: pointer_default {
+		compatible = "zmk,pointer-relative";
+	};
 
+	sensors {
+		pointer-sensor {
+			compatible = "zmk,pointer-sensor";
+			pointer = <&pointer0>;
+		};
+	};
+};
+
+&pointer_vel_sensor {
+	compatible = "zmk,pointer-vel-sensor";
+};
+
+// 鼠标灵敏度（只定义一次！）
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
 
