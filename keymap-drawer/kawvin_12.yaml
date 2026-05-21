@@ -4,6 +4,7 @@ layers:
   - HOME
   - UP
   - PG UP
+  - ENTER
   - LEFT
   - DOWN
   - RIGHT
@@ -17,6 +18,7 @@ layers:
   - '1'
   - '2'
   - '3'
+  - ENTER
   - '4'
   - '5'
   - '6'
@@ -30,6 +32,7 @@ layers:
   - '&mkp LCLK'
   - '&mmv MOVE_UP'
   - '&mkp RCLK'
+  - ENTER
   - '&mmv MOVE_LEFT'
   - '&mmv MOVE_DOWN'
   - '&mmv MOVE_RIGHT'
@@ -43,6 +46,7 @@ layers:
   - {t: Ctl+LEFT, h: C}
   - UP
   - {t: Ctl+RIGHT, h: PG UP}
+  - ENTER
   - LEFT
   - DOWN
   - RIGHT
@@ -56,6 +60,7 @@ layers:
   - HOME
   - UP
   - PG UP
+  - ENTER
   - LEFT
   - DOWN
   - RIGHT
@@ -69,6 +74,7 @@ layers:
   - {t: HOME, h: Ctl+1}
   - UP
   - {t: PG UP, h: Ctl+9}
+  - ENTER
   - LEFT
   - DOWN
   - RIGHT
