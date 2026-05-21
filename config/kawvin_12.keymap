@@ -4,60 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors/mouse_keys.dtsi>
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
-
-//开启指针设备 → 编码器想发滚轮信号
-/ {
-	pointer0: pointer_default {
-		compatible = "zmk,pointer-relative";
-	};
-
-	sensors {
-		pointer-sensor {
-			compatible = "zmk,pointer-sensor";
-			pointer = <&pointer0>;
-		};
-	};
-};
-
-pointer_vel_sensor {
-	compatible = "zmk,pointer-vel-sensor";
-};
-
-// 鼠标灵敏度（只定义一次！）
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
-
-// 鼠标快捷宏（必须放在头文件之后！）
-// 鼠标指针移动快捷宏
-#define U_MS_U &mmv MOVE_UP
-#define U_MS_D &mmv MOVE_DOWN
-#define U_MS_L &mmv MOVE_LEFT
-#define U_MS_R &mmv MOVE_RIGHT
-
-// 鼠标滚轮滚动快捷宏（新增！）
-#define U_WH_U &mscrl SCRL_UP    // 滚轮向上
-#define U_WH_D &mscrl SCRL_DOWN  // 滚轮向下
-#define U_WH_L &mscrl SCRL_LEFT  // 滚轮向左（水平滚动）
-#define U_WH_R &mscrl SCRL_RIGHT // 滚轮向右（水平滚动）
-
-// 新版 ZMK 指针滚轮（推荐！更流畅）(新版写法)
-//#define U_WH_U &pointer_vel y -120
-//#define U_WH_D &pointer_vel y 120
-//#define U_WH_L &pointer_vel x -120
-//#define U_WH_R &pointer_vel x 120
-
-// 鼠标按键（可选，方便使用）
-#define U_MB1 &mk LMB  // 鼠标左键
-#define U_MB2 &mk RMB  // 鼠标右键
-#define U_MB3 &mk MMB  // 鼠标中键
+#include "kawvin_12.dtsi"
 
 / {
     behaviors {
