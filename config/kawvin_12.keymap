@@ -15,6 +15,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 //开启指针设备 → 编码器想发滚轮信号
+/*
 / {
 	pointer0: pointer_default {
 		compatible = "zmk,pointer-relative";
@@ -31,6 +32,7 @@
 &pointer_vel_sensor {
 	compatible = "zmk,pointer-vel-sensor";
 };
+*/
 
 / {
     behaviors {
