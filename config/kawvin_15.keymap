@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-//#include "kawvin_12.dtsi"
+//#include "kawvin_15.dtsi"
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -108,16 +108,18 @@
 
         qwerty_layer {
             //  ---------------------------------------------------------------------------------
-            //  |HOME|UP         |PG_UP|ENTER|
-            //  |LEFT|DOWN       |RIGHT|
-            //  |END |ENTER      |PG_DN|
-            //  |TAB |&ltq 2 BSPC|&to 1|
+            //  |HOME |UP        |PG_UP |
+            //  |LEFT |DOWN      |RIGHT |
+            //  |END  |ENTER     |PG_DN |
+            //  |TAB  |BSPC      |LA(F4)|
+            //  |&to 1|&ltq 2 DEL|ENTER |
 
             bindings = <
-                &kp HOME  &kp UP       &kp PG_UP  &kp ENTER
-                &kp LEFT  &kp DOWN     &kp RIGHT  
-                &kp END   &kp ENTER    &kp PG_DN  
-                &kp TAB   &ltq 2 BSPC  &to 1      
+                &kp HOME  &kp UP      &kp PG_UP   
+                &kp LEFT  &kp DOWN    &kp RIGHT   
+                &kp END   &kp ENTER   &kp PG_DN   
+                &kp TAB   &kp BSPC    &kp LA(F4)  
+                &to 1     &ltq 2 DEL  &kp ENTER   
             >;
 
             label = "Qwerty";
@@ -127,16 +129,19 @@
 
         number_layer {
             //  ---------------------------------------------------------------------------------
-            //  |N1|N2 |N3   |ENTER|
-            //  |N4|N5 |N6   |
-            //  |N7|N8 |N9   |
-            //  |N0|DOT|&to 2|
+            //  |N1   |N2 |N3   |
+            //  |N4   |N5 |N6   |
+            //  |N7   |N8 |N9   |
+            //  |N0   |N0 |DOT  |
+            //  |&to 2|N0 |ENTER|
+
 
             bindings = <
-                &kp N1  &kp N2      &kp N3  &kp ENTER
-                &kp N4  &kp N5      &kp N6  
-                &kp N7  &kp N8      &kp N9  
-                &kp N0  &kp KP_DOT  &to 2   
+                &kp N1  &kp N2  &kp N3      
+                &kp N4  &kp N5  &kp N6      
+                &kp N7  &kp N8  &kp N9      
+                &kp N0  &kp N0  &kp KP_DOT  
+                &to 2   &kp N0  &kp ENTER   
             >;
 
             label = "Number";
@@ -146,16 +151,20 @@
 
         mouse_layer {
             //  ---------------------------------------------------------------------------------
-            //  |&mkp LCLK     |&mmv MOVE_UP  |&mkp RCLK      |ENTER|
+            //  |&mkp LCLK     |&mmv MOVE_UP  |&mkp RCLK      |
             //  |&mmv MOVE_LEFT|&mmv MOVE_DOWN|&mmv MOVE_RIGHT|
             //  |BT_SEL 0      |ENTER         |BT_CLR         |
-            //  |BT_SEL 1      |              |&to 3          |
+            //  |BT_SEL 1      |BT_SEL 2      |&studio_unlock |
+            //  |&to 3         |              |ENTER          |
+
 
             bindings = <
-                &mkp LCLK       &mmv MOVE_UP    &mkp RCLK          &kp ENTER
+                &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        
                 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  
                 &bt BT_SEL 0    &kp ENTER       &bt BT_CLR       
-                &bt BT_SEL 1    &trans          &to 3            
+                &bt BT_SEL 1    &bt BT_SEL 2    &studio_unlock   
+                &to 3           &trans          &kp ENTER        
+
             >;
 
             label = "Mouse";
@@ -165,16 +174,20 @@
 
         play_layer {
             //  ---------------------------------------------------------------------------------
-            //  |&mt C LC(LEFT)|UP                 |&mt PG_UP LC(RIGHT)|ENTER|
-            //  |LEFT          |DOWN               |RIGHT              |
-            //  |&mt X LS(LEFT)|SPACE              |&mt PG_DN LS(RIGHT)|
-            //  |&mt E N1      |&mt BACKSPACE ENTER|&to 4              |
+            //  |&mt T LC(LEFT)|UP    |&mt PG_UP LC(RIGHT)|
+            //  |LEFT          |DOWN  |RIGHT              |
+            //  |&mt R LS(LEFT)|SPACE |&mt PG_DN LS(RIGHT)|
+            //  |&mt E         |G     |&mt BACKSPACE      |
+            //  |&to 4         |&mt N1|ENTER              |
+
 
             bindings = <
-                &mt C LC(LEFT)  &kp UP               &mt PG_UP LC(RIGHT)    &kp ENTER
-                &kp LEFT        &kp DOWN             &kp RIGHT            
-                &mt X LS(LEFT)  &kp SPACE            &mt PG_DN LS(RIGHT)  
-                &mt E N1        &mt BACKSPACE ENTER  &to 4                
+                &mt T LC(LEFT)  &kp UP     &mt PG_UP LC(RIGHT)  
+                &kp LEFT        &kp DOWN   &kp RIGHT            
+                &mt R LS(LEFT)  &kp SPACE  &mt PG_DN LS(RIGHT)  
+                &mt E           &kp G      &mt BACKSPACE        
+                &to 4           &mt N1     &kp ENTER            
+
             >;
 
             label = "Play";
@@ -183,17 +196,21 @@
 
         read_layer {
             //  ---------------------------------------------------------------------------------
-            //  |HOME|UP   |PG_UP|ENTER|
-            //  |LEFT|DOWN |RIGHT|
-            //  |END |SPACE|PG_DN|
-            //  |ESC |ENTER|&to 5|
+            //  |HOME |UP   |PG_UP |
+            //  |LEFT |DOWN |RIGHT |
+            //  |END  |SPACE|PG_DN |
+            //  |ESC  |SPACE|LA(F4)|
+            //  |&to 5|ENTER|ENTER |
+
 
 
             bindings = <
-                &kp HOME  &kp UP     &kp PG_UP    &kp ENTER
-                &kp LEFT  &kp DOWN   &kp RIGHT  
-                &kp END   &kp SPACE  &kp PG_DN  
-                &kp ESC   &kp ENTER  &to 5      
+                &kp HOME  &kp UP     &kp PG_UP   
+                &kp LEFT  &kp DOWN   &kp RIGHT   
+                &kp END   &kp SPACE  &kp PG_DN   
+                &kp ESC   &kp SPACE  &kp LA(F4)  
+                &to 5     &kp ENTER  &kp ENTER   
+
             >;
 
             label = "Read";
@@ -203,16 +220,20 @@
 
         chrome_layer {
             //  ---------------------------------------------------------------------------------
-            //  |&mt LC(N1) HOME        |UP   |&mt LC(N9) PG_UP|ENTER|
-            //  |LEFT                   |DOWN |RIGHT           |
-            //  |END                    |SPACE|PG_DN           |
-            //  |&mt LC(LS(TAB)) LC(TAB)|LC(W)|&to 0           |
+            //  |&mt LC(N1) HOME|UP     |&mt LC(N9) PG_UP|
+            //  |LEFT           |DOWN   |RIGHT           |
+            //  |END            |SPACE  |PG_DN           |
+            //  |LC(LS(TAB))    |LC(TAB)|LC(W)           |
+            //  |&to 0          |LC(W)  |ENTER           |
+
 
             bindings = <
-                &mt LC(N1) HOME          &kp UP     &mt LC(N9) PG_UP    &kp ENTER
-                &kp LEFT                 &kp DOWN   &kp RIGHT         
-                &kp END                  &kp SPACE  &kp PG_DN         
-                &mt LC(LS(TAB)) LC(TAB)  &kp LC(W)  &to 0             
+                &mt LC(N1) HOME  &kp UP       &mt LC(N9) PG_UP  
+                &kp LEFT         &kp DOWN     &kp RIGHT         
+                &kp END          &kp SPACE    &kp PG_DN         
+                &kp LC(LS(TAB))  &kp LC(TAB)  &kp LC(W)         
+                &to 0            &kp LC(W)    &kp ENTER         
+
              >;
 
             label = "Chrome";

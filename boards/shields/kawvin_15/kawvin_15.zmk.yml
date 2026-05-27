@@ -1,8 +1,8 @@
 file_format: "1"
-id: kawvin_12
-name: kawvin_12
+id: kawvin_15
+name: kawvin_15
 type: shield
-url: https://github.com/kawvin/zmk-ky12
+url: https://github.com/kawvin/zmk-ky15
 requires: [pro_micro]
 exposes: [i2c_oled]
 features:
@@ -10,4 +10,4 @@ features:
   - display
   - encoder
 siblings:
-  - kawvin_12
+  - kawvin_15

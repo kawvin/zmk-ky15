@@ -19,21 +19,21 @@
 ---
 include:
 
-# kawvin12无屏
-  - board: nice_nano_v2
-    shield: kawvin_12
-    snippet: studio-rpc-usb-uart
-    artifact-name: ky12v3_no_display
+# kawvin15无屏
+  # - board: nice_nano_v2
+  #   shield: kawvin_15
+  #   snippet: studio-rpc-usb-uart
+  #   artifact-name: ky15v1_no_display
 
-# kawvin12带0.42屏
+# kawvin15带0.42屏
   - board: nice_nano_v2
-    shield: kawvin_12 display_042
+    shield: kawvin_15 display_042 rgbled_adapter
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_DISPLAY=y
-    artifact-name: ky12v3_with_display
+    artifact-name: ky15v1_with_display
 
 
 # # 重置固件
-  - board: nice_nano_v2
-    shield: settings_reset
-    artifact-name: ky12_settings_reset
+  # - board: nice_nano_v2
+  #   shield: settings_reset
+  #   artifact-name: ky15_settings_reset

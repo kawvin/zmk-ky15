@@ -6,13 +6,38 @@ manifest:
       url-base: https://github.com/petejohanson  # 添加鼠标的修订
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    # 保持现有远程设置不变
   projects:
+    
+    # - name: zmk
+    #   remote: petejohanson
+    #   # revision: main
+    #   # revision: v0.3
+    #   # revision: feat/pointers-move-scroll  # 添加鼠标的修订
+    #   revision: feat/pointers-with-input-processors  # 添加鼠标的修订
+    #   import: app/west.yml
+
+    # ZMK: DYA Studio 附带自定义RPC子系统的cormoran分支
     - name: zmk
-      remote: petejohanson
-      # revision: main
-      # revision: v0.3
-      # revision: feat/pointers-move-scroll  # 添加鼠标的修订
-      revision: feat/pointers-with-input-processors  # 添加鼠标的修订
+      remote: cormoran
+      revision: v0.3-branch+dya
       import: app/west.yml
+
+    # DYA Studio 模块（全部位于 cormoran 仓库）
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+    
+    # 其他模块（轨迹球驱动程序、LED小部件等）
+    
   self:
     path: config

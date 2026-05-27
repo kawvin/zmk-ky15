@@ -1,15 +1,15 @@
 # Copyright (c) 2023 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-#if SHIELD_KAWVIN_12
+#if SHIELD_KAWVIN_15
 
 config ZMK_KEYBOARD_NAME
-    default "Kawvin_12"
+    default "Kawvin_15"
 
 #config ZMK_SPLIT_ROLE_CENTRAL
 #    default y
 
-#endif # SHIELD_KAWVIN_12
+#endif # SHIELD_KAWVIN_15
 
 choice BT_CTLR_TX_PWR
     default BT_CTLR_TX_PWR_PLUS_8

@@ -5,7 +5,10 @@
 
 */
 
-#include "kawvin_12.dtsi"
+#include "kawvin_15.dtsi"
+#include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
+#include <behaviors/battery_history_request.dtsi>
 
 &pinctrl {
     i2c0_default: i2c0_default {
@@ -87,13 +90,13 @@
             , <&gpio1  0 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
             , <&gpio1  4 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
             , <&gpio1  6 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+            , <&gpio0 17 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
             ;
 
         col-gpios
             = <&gpio0 20 GPIO_ACTIVE_HIGH>
             , <&gpio0 11 GPIO_ACTIVE_HIGH>
             , <&gpio0 24 GPIO_ACTIVE_HIGH>
-            , <&gpio0 17 GPIO_ACTIVE_HIGH>
             ;
     };
 
