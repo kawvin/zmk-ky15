@@ -372,10 +372,10 @@ path.combo {
 <text x="112" y="28" class="combo tap">ESC</text>
 </g>
 <g class="combo combopos-2">
-<path d="M112,112 l22,-66" class="combo"/>
-<path d="M112,112 l-22,66" class="combo"/>
-<rect rx="6" ry="6" x="98" y="99" width="28" height="26" class="combo"/>
-<text x="112" y="112" class="combo tap"><tspan style="font-size: 64%">&amp;bootloader</tspan></text>
+<path d="M84,112 l46,-68" class="combo"/>
+<path d="M84,112 l-46,68" class="combo"/>
+<rect rx="6" ry="6" x="70" y="99" width="28" height="26" class="combo"/>
+<text x="84" y="112" class="combo tap"><tspan style="font-size: 64%">&amp;bootloader</tspan></text>
 </g>
 </g>
 </g>
@@ -627,10 +627,10 @@ path.combo {
 <text x="112" y="28" class="combo tap">ESC</text>
 </g>
 <g class="combo combopos-2">
-<path d="M112,112 l22,-66" class="combo"/>
-<path d="M112,112 l-22,66" class="combo"/>
-<rect rx="6" ry="6" x="98" y="99" width="28" height="26" class="combo"/>
-<text x="112" y="112" class="combo tap"><tspan style="font-size: 64%">&amp;bootloader</tspan></text>
+<path d="M84,112 l46,-68" class="combo"/>
+<path d="M84,112 l-46,68" class="combo"/>
+<rect rx="6" ry="6" x="70" y="99" width="28" height="26" class="combo"/>
+<text x="84" y="112" class="combo tap"><tspan style="font-size: 64%">&amp;bootloader</tspan></text>
 </g>
 </g>
 </g>
