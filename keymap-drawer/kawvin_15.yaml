@@ -1,0 +1,106 @@
+layout: {zmk_keyboard: kawvin_15}
+layers:
+  Qwerty:
+  - HOME
+  - UP
+  - PG UP
+  - LEFT
+  - DOWN
+  - RIGHT
+  - END
+  - ENTER
+  - PG DN
+  - TAB
+  - BSPC
+  - Alt+F4
+  - {t: Number, h: toggle}
+  - {t: DEL, h: Mouse}
+  - ENTER
+  Number:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '0'
+  - KP DOT
+  - {t: Mouse, h: toggle}
+  - '0'
+  - ENTER
+  Mouse:
+  - '&mkp LCLK'
+  - '&mmv MOVE_UP'
+  - '&mkp RCLK'
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - {t: BT, h: '0'}
+  - ENTER
+  - BT CLR
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - '&studio_unlock'
+  - {t: Play, h: toggle}
+  - {type: held}
+  - ENTER
+  Play:
+  - {t: Ctl+LEFT, h: T}
+  - UP
+  - {t: Ctl+RIGHT, h: PG UP}
+  - LEFT
+  - DOWN
+  - RIGHT
+  - {t: Sft+LEFT, h: R}
+  - SPACE
+  - {t: Sft+RIGHT, h: PG DN}
+  - E
+  - G
+  - BACKSPACE
+  - {t: Read, h: toggle}
+  - '1'
+  - ENTER
+  Read:
+  - HOME
+  - UP
+  - PG UP
+  - LEFT
+  - DOWN
+  - RIGHT
+  - END
+  - SPACE
+  - PG DN
+  - ESC
+  - SPACE
+  - Alt+F4
+  - {t: Chrome, h: toggle}
+  - ENTER
+  - ENTER
+  Chrome:
+  - {t: HOME, h: Ctl+1}
+  - UP
+  - {t: PG UP, h: Ctl+9}
+  - LEFT
+  - DOWN
+  - RIGHT
+  - END
+  - SPACE
+  - PG DN
+  - Ctl+Sft+TAB
+  - Ctl+TAB
+  - Ctl+W
+  - {t: Qwerty, h: toggle}
+  - Ctl+W
+  - ENTER
+combos:
+- p: [0, 1]
+  k: ESC
+- p: [1, 2]
+  k: ESC
+- p: [2, 10]
+  k: '&bootloader'
+  l: [Mouse, Chrome]
