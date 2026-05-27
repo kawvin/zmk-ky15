@@ -78,10 +78,10 @@
             timeout-ms = <200>;
         };
 
-        // 在2、5层同时按 2 + 10 → bootloader
+        // 在2、5层同时按 2 + 9 → bootloader
         flash {
             bindings = <&bootloader>;
-            key-positions = <2 10>;
+            key-positions = <2 9>;
             timeout-ms = <200>;
             layers = <2 5>;
         };
