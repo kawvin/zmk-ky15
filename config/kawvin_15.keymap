@@ -115,7 +115,7 @@
             //  |&to 1|&ltq 2 DEL|ENTER |
 
             bindings = <
-                &kp HOME  &kp UP      &kp PG_UP   
+                &studio_unlock   &kp UP      &kp PG_UP   
                 &kp LEFT  &kp DOWN    &kp RIGHT   
                 &kp END   &kp ENTER   &kp PG_DN   
                 &kp TAB   &kp BSPC    &kp LA(F4)  
