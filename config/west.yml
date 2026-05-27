@@ -2,8 +2,9 @@ manifest:
   remotes:
     # - name: zmkfirmware
       # url-base: https://github.com/zmkfirmware
-    - name: petejohanson
+    # - name: petejohanson
       # url-base: https://github.com/petejohanson  # 添加鼠标的修订
+    - name: cormoran
       url-base: https://github.com/cormoran  # DYA Studio 模块
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
