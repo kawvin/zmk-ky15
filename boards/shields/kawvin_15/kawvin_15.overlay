@@ -12,6 +12,7 @@
 
 &pinctrl {
     i2c0_default: i2c0_default {
+        #binding-cells = <2>; 
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 8)>,
                     <NRF_PSEL(TWIM_SCL, 0, 6)>;

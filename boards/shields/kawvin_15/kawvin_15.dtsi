@@ -14,15 +14,13 @@
 
 // #define RC(row, col) {(row), (col)} 在 matrix_transform 中已经定义过了，不需要重复定义！
 
-// 滚轮速度
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 30
-
 // 强行取消冲突的 RC 宏定义（绝杀！）
 //#undef RC
 
 // 鼠标灵敏度（只定义一次！）
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20   // 滚轮速度
+// 滚轮速度
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 30   // 滚轮速度
 
 // 鼠标快捷宏（必须放在头文件之后！）
 // 鼠标指针移动快捷宏

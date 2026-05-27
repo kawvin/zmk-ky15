@@ -177,16 +177,16 @@
             //  |&mt T LC(LEFT)|UP    |&mt PG_UP LC(RIGHT)|
             //  |LEFT          |DOWN  |RIGHT              |
             //  |&mt R LS(LEFT)|SPACE |&mt PG_DN LS(RIGHT)|
-            //  |&mt E         |G     |&mt BACKSPACE      |
-            //  |&to 4         |&mt N1|ENTER              |
+            //  |E             |G     |BACKSPACE      |
+            //  |&to 4         |N1    |ENTER              |
 
 
             bindings = <
                 &mt T LC(LEFT)  &kp UP     &mt PG_UP LC(RIGHT)  
                 &kp LEFT        &kp DOWN   &kp RIGHT            
                 &mt R LS(LEFT)  &kp SPACE  &mt PG_DN LS(RIGHT)  
-                &mt E           &kp G      &mt BACKSPACE        
-                &to 4           &mt N1     &kp ENTER            
+                &kp E           &kp G      &kp BACKSPACE        
+                &to 4           &kp N1     &kp ENTER            
 
             >;
 
