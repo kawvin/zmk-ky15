@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: kawvin_15}
 layers:
   Qwerty:
-  - HOME
+  - '&studio_unlock'
   - UP
   - PG UP
   - LEFT
