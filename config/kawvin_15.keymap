@@ -290,8 +290,8 @@
             label = "Chrome";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
             //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
-            sensor-bindings = <&rsr_msch &rsr_msch>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
     };
 };
