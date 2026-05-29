@@ -60,6 +60,7 @@
             flavor = "tap-preferred";
         };
 
+/*
         // Rotary encoder
         rsr_lr: rsr_lr {
 			compatible = "zmk,behavior-runtime-sensor-rotate";
@@ -90,6 +91,15 @@
 			cw-binding = <&msc SCRL_RIGHT>;
 			ccw-binding = <&msc SCRL_LEFT>;
 		};
+*/
+
+        /* 原生编码器行为：左右方向键 */
+        enc_dir: enc_dir {
+            compatible = "zmk,behavior-encoder";
+            #binding-cells = <1>;
+            rotate-press = <&kp LEFT>;
+            rotate-release = <&kp RIGHT>;
+        };
     };
 
     combos {
@@ -158,8 +168,8 @@
             label = "Qwerty";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
             //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
-            sensor-bindings = <&rsr_msch &rsr_msch>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
 
         number_layer {
@@ -182,8 +192,8 @@
             label = "Number";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
             //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
-            sensor-bindings = <&rsr_msch &rsr_msch>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
 
         mouse_layer {
@@ -207,8 +217,8 @@
             label = "Mouse";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
             //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
-            sensor-bindings = <&rsr_msch &rsr_msch>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
 
         play_layer {
@@ -255,8 +265,8 @@
             label = "Read";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
             //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
-            sensor-bindings = <&rsr_msch &rsr_msch>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
 
         chrome_layer {
