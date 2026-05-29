@@ -93,13 +93,14 @@
 		};
 */
 
-        /* 原生编码器行为：左右方向键 */
+        /* 原生编码器行为：左右方向键
         enc_dir: enc_dir {
             compatible = "zmk,behavior-encoder";
             #binding-cells = <1>;
             rotate-press = <&kp LEFT>;
             rotate-release = <&kp RIGHT>;
         };
+        */
     };
 
     combos {
@@ -167,8 +168,8 @@
 
             label = "Qwerty";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
-            //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
+            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
             //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
 
@@ -191,8 +192,8 @@
 
             label = "Number";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
-            //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
+            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
             //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
 
@@ -216,8 +217,8 @@
 
             label = "Mouse";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
-            //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
+            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
             //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
 
@@ -264,8 +265,8 @@
 
             label = "Read";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
-            //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
+            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
             //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
 
@@ -289,8 +290,8 @@
 
             label = "Chrome";
             //sensor-bindings = <&pointer_vel_sensor y -120 y 120>;
-            //sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
-            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp SCRL_DOWN SCRL_UP>;
+            //sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
             //sensor-bindings = <&rsr_msch &rsr_msch>;
         };
     };
