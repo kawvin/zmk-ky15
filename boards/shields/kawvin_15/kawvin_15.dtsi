@@ -12,10 +12,6 @@
 #include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/mouse.h>
 
-// #define RC(row, col) {(row), (col)} 在 matrix_transform 中已经定义过了，不需要重复定义！
-
-// 强行取消冲突的 RC 宏定义（绝杀！）
-//#undef RC
 
 // 鼠标灵敏度（只定义一次！）
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
@@ -29,26 +25,6 @@
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
 
-// 鼠标滚轮滚动快捷宏（新增！）
-// #define U_WH_U &mscrl SCRL_UP    // 滚轮向上
-// #define U_WH_D &mscrl SCRL_DOWN  // 滚轮向下
-// #define U_WH_L &mscrl SCRL_LEFT  // 滚轮向左（水平滚动）
-// #define U_WH_R &mscrl SCRL_RIGHT // 滚轮向右（水平滚动）
-
-// 编码器 = 滚轮上下（原生 ZMK 语法，无任何冲突！）
-#define ENC_SCROLL_UP &mscrl SCRL_UP
-#define ENC_SCROLL_DOWN &mscrl SCRL_DOWN
-
-// 新版 ZMK 指针滚轮（推荐！更流畅）(新版写法)
-//#define U_WH_U &pointer_vel y -120
-//#define U_WH_D &pointer_vel y 120
-//#define U_WH_L &pointer_vel x -120
-//#define U_WH_R &pointer_vel x 120
-
-// 鼠标按键（可选，方便使用）
-#define U_MB1 &mk LMB  // 鼠标左键
-#define U_MB2 &mk RMB  // 鼠标右键
-#define U_MB3 &mk MMB  // 鼠标中键
 
 / {
     // 👇 必须加：定义按键扫描矩阵（5行3列，适配你的ky15键盘）
